@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, XMLParserDelegate {
+class ViewController: UIViewController, XMLParserDelegate, UITableViewDelegate, UITableViewDataSource  {
+    
+    @IBOutlet weak var table: UITableView!
+    
     var items = [AirQuailtyData]()
     var item = AirQuailtyData()
     var myPm10 = ""
-    var myPm25 = ""
     var mySite = ""
     var myPm10Cai = ""
-    var myPm25Cai = ""
     var currentElement = ""
     var currentTime = ""
     
@@ -24,6 +25,27 @@ class ViewController: UIViewController, XMLParserDelegate {
         
         // Timer 호출
         Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ViewController.myParse), userInfo: nil, repeats: true)
+        table.delegate = self
+        table.dataSource = self
+        myParse()
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = table.dequeueReusableCell(withIdentifier: "RE", for: indexPath)
+        
+        
+        let name = cell.viewWithTag(3) as! UILabel
+        let color = cell.viewWithTag(2) as! UILabel
+        let site = cell.viewWithTag(1) as! UILabel
+        
+        name.text = items[indexPath.row].dPm10
+        color.text = items[indexPath.row].dPm10Cai
+        site.text = items[indexPath.row].dSite
+        
+        return cell
     }
     
     @objc func myParse() {
@@ -82,9 +104,7 @@ class ViewController: UIViewController, XMLParserDelegate {
             //            print("data = \(data)")
             switch currentElement {
             case "pm10" : myPm10 = data
-            case "pm25" : myPm25 = data
             case "pm10Cai" : myPm10Cai = data
-            case "pm25Cai" : myPm25Cai = data
             case "site" : mySite = data
             default : break
             }
@@ -96,9 +116,7 @@ class ViewController: UIViewController, XMLParserDelegate {
         if elementName == "item" {
             let myItem = AirQuailtyData()
             myItem.dPm10 = myPm10
-       
             myItem.dPm10Cai = myPm10Cai
-          
             myItem.dSite = mySite
             items.append(myItem)
         }

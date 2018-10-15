@@ -12,6 +12,7 @@
 		0C55B42A217430D200A775C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C55B428217430D200A775C8 /* Main.storyboard */; };
 		0C55B42C217430D400A775C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C55B42B217430D400A775C8 /* Assets.xcassets */; };
 		0C55B42F217430D400A775C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C55B42D217430D400A775C8 /* LaunchScreen.storyboard */; };
+		0C55B437217430EB00A775C8 /* AirQualityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C55B436217430EB00A775C8 /* AirQualityData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0C55B42B217430D400A775C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C55B42E217430D400A775C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C55B430217430D400A775C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C55B436217430EB00A775C8 /* AirQualityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AirQualityData.swift; path = "../../../../Documents/Busan-AirQuality-XML-Parsing-Data-Class-Timer/BusanAirQualityParsing/AirQualityData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				0C55B42B217430D400A775C8 /* Assets.xcassets */,
 				0C55B42D217430D400A775C8 /* LaunchScreen.storyboard */,
 				0C55B430217430D400A775C8 /* Info.plist */,
+				0C55B436217430EB00A775C8 /* AirQualityData.swift */,
 			);
 			path = BusanAirQualityParsing;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C55B437217430EB00A775C8 /* AirQualityData.swift in Sources */,
 				0C55B427217430D200A775C8 /* ViewController.swift in Sources */,
 				0C55B425217430D200A775C8 /* AppDelegate.swift in Sources */,
 			);
